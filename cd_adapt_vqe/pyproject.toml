@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "cd-adapt-vqe"
+version = "1.0.0"
+description = "Counterdiabatic ADAPT-VQE: simulation code for molecular ground state energies"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+
+keywords = [
+    "quantum computing",
+    "variational quantum eigensolver",
+    "ADAPT-VQE",
+    "counterdiabatic driving",
+    "adiabatic gauge potential",
+    "quantum chemistry",
+]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Scientific/Engineering :: Chemistry",
+]
+
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "qiskit>=0.45",
+    "qiskit-nature>=0.7",
+    "pyscf>=2.3",
+    "pandas>=2.0",
+    "openpyxl>=3.1",
+    "matplotlib>=3.7",
+]
+
+[project.optional-dependencies]
+comparisons = [
+    "qutip>=4.7",       # For counterdiabatic driving reference simulation
+]
+dev = [
+    "pytest>=7.0",
+    "jupyter>=1.0",
+]
+
+[project.urls]
+"Homepage"    = "https://github.com/jervaal/cd-adapt-vqe"
+"Paper"       = "https://arxiv.org/abs/2601.05973"
+"Bug Tracker" = "https://github.com/jervaal/cd-adapt-vqe/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["cd_adapt_vqe*"]
