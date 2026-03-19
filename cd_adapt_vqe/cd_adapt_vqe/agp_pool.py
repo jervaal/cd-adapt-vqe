@@ -102,7 +102,7 @@ def compute_agp_pool(
     Notes
     -----
     - The identity operator (all-I string) is always excluded from the pool,
-      as it contributes only a global phase and has zero gradient.
+      as it contributes only a global phase.
     - Coefficients are discarded; only the Pauli string labels are kept.
       The actual weight of each gate is learned by the VQE optimizer.
     - For large molecules (many qubits), pool generation can be slow because
